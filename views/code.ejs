@@ -1,0 +1,51 @@
+<%- include("header.ejs"); -%>
+<body>
+
+<section class="code-ground">
+    <div class="code-type">
+        <form action="/code" method="post">
+        <div class="input-upper">
+            <select id="language" name="lang">
+                    
+                
+                    <option value="Java">Java</option>
+                    <option value="C">C++</option>
+                    <option value="Python">Python</option>
+                    <option value="C">C</option>
+                   
+                  </select>
+
+                    <button class="btn" type="submit">Run</button>
+                
+             </div>
+         <div class="input-bottom">
+            <h3>Code :</h3>
+            <textarea id="editor" name="code" cols="40" rows="10"><%=input%></textarea>
+        </div>
+       
+    
+    </div>
+
+    <div class="result-show">
+        <div class="userInput">
+            <h3>Input :</h3>
+            <textarea  name="input" id="editor" cols="30" rows="10" placeholder=" //Enter Your Input"><%=userCodeInput%>  </textarea>
+        </div>
+    </form>
+        <div class="output">
+            <h3>Output :</h3>
+            <div class="outputBox">
+                <textarea name="" class="outputDiv" id="" cols="30" rows="10"><%=code%></textarea>
+                <!-- <div class="outputDiv"> <%=code%></div> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="/public/js/index.js"></script>
+    
+</body>
