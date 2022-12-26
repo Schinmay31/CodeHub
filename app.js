@@ -12,6 +12,7 @@ const app = express();
 let codeOutput = "";
 let codeInput="";
 let userCodeInput="";
+let userLang = "";
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended : true}));
@@ -36,10 +37,12 @@ app.get("/code",function(req,res){
        code : codeOutput,
        input : codeInput,
        userCodeInput : userCodeInput,
+    //    userLang : userLang,
     });
     codeInput="";
     codeOutput="";
     userCodeInput="";
+    // userLang="";
  });
 
 app.post("/code",function(req,res){
@@ -50,13 +53,14 @@ app.post("/code",function(req,res){
 
     codeInput = code;
     userCodeInput = customInput;
+    userLang = lang;
 
     console.log(lang);
     console.log(code);
     console.log(customInput);
 
 
-    if(lang === "Java"){               // for java                  //working
+    if(lang === "Java"){               // for java     //working
     
         if(userCodeInput === ""){
             let envData =   { OS : "windows" , cmd : "g++" };
@@ -88,8 +92,10 @@ app.post("/code",function(req,res){
        }
 
     
-   if(lang === "C"){         // for C and C++          
-    var envData = { OS : "windows" , cmd : "g++"}; 
+   if(lang === "C"){         // for C and C++   // working
+    
+    if(userCodeInput === ""){
+    var envData = { OS : "windows" , cmd : "g++",options : {setTimeout : 10}}; 
     compiler.compileCPP(envData , code , function (data) {
         if(data.error){
             codeOutput= data.error;
@@ -99,9 +105,24 @@ app.post("/code",function(req,res){
         }
         res.redirect("/code");
      });
+    }
+    else{
+        var envData = { OS : "windows" , cmd : "g++",options : {setTimeout : 10}}; 
+    compiler.compileCPPWithInput(envData , code,customInput , function (data) {
+        if(data.error){
+            codeOutput= data.error;
+        }
+        else{
+            codeOutput = data.output;
+        }
+        res.redirect("/code");
+     });
+    }
   }
 
-if(lang === "Python"){         // for python
+if(lang === "Python"){         // for python   // Working
+
+    if(userCodeInput === ""){
     var envData = { OS : "windows" }; 
     compiler.compilePython(envData , code , function (data) {
         if(data.error){
@@ -112,6 +133,18 @@ if(lang === "Python"){         // for python
         }
         res.redirect("/code");
 });
+    }
+    else{
+        compiler.compilePythonWithInput(envData , code,customInput , function (data) {
+            if(data.error){
+                codeOutput= data.error;
+            }
+            else{
+                codeOutput = data.output;
+            }
+            res.redirect("/code");
+    });
+    }
 }
 
 });

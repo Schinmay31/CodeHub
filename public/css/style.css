@@ -7,6 +7,7 @@ body {
 }
 
 
+
 /* header code  */
 nav {
     display: inline;
@@ -45,6 +46,15 @@ nav {
     color: #def2f1;
     cursor: pointer;
 }
+
+
+footer{
+    background-color: white;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    height: auto;
+}
+
 
 /* code page css */
 
@@ -248,7 +258,8 @@ nav {
 .left-side-content h2:hover {
     cursor: pointer;
 }
-.code-btn{
+
+.code-btn {
     display: inline;
     margin-top: 1rem;
     text-align: center;
@@ -257,23 +268,26 @@ nav {
     /* border: solid 2px #17252a; */
     width: 23%;
     height: 9%;
-    
+
 }
-.code-btn a{
+
+.code-btn a {
     margin-left: 1rem;
     font-size: 15px;
     color: #a09d9d;
     text-decoration: none;
     padding-top: 1rem;
 }
-.code-btn a:hover{
+
+.code-btn a:hover {
     color: #def2f1;
 }
 
-#second{
-       margin-left: 5rem;
-       font-size: 16px;
+#second {
+    margin-left: 5rem;
+    font-size: 16px;
 }
+
 .logo {
     display: inline-flex;
     /* border: solid 1px whitesmoke; */
@@ -286,6 +300,7 @@ nav {
     font-size: 1.3rem;
     color: #aeabab;
 }
+
 .options {
     width: 100%;
     height: 50vh;
@@ -349,21 +364,31 @@ nav {
     color: #b5d5e1;
     cursor: pointer;
 }
-.dialoge{
+
+.dialoge {
     width: 100%;
     height: 20vh;
     /* border: solid 1px whitesmoke; */
     margin: 3rem 0rem;
     background-color: #162125;
 }
-.dialoge p{
+
+.dialoge p {
     padding-top: 1.8rem;
     color: #def2f1;
     text-align: center;
     font-size: large;
     margin: 2rem;
 }
-.tech-used{
+mark{
+    background-color: #162125;
+    color: #3da0c4;
+    font-weight: 800;
+    font-size: 24px;
+    text-decoration:wavy;   
+   }
+
+.tech-used {
     width: 100%;
     height: 40vh;
     /* border: solid 1px whitesmoke; */
@@ -371,35 +396,41 @@ nav {
     background-color: #162125;
 
 }
-.tech-used h3{
+
+.tech-used h3 {
     text-align: center;
     color: #aeabab;
     font-size: 1.4rem;
     margin-bottom: 0.3rem;
     padding-top: 1.6rem;
 }
-.tech-used h3:hover{
+
+.tech-used h3:hover {
     cursor: pointer;
     color: #b5d5e1;
 }
-.row{
+
+.row {
     display: inline-flex;
-       width: 99%;
-       height: 70%;
-       margin:1rem;
-       /* border: 1px solid whitesmoke; */
+    width: 99%;
+    height: 70%;
+    margin: 1rem;
+    /* border: 1px solid whitesmoke; */
 }
-.column{
-     width: 15%;
-     height: 80%;
-     margin: 1rem;
-     /* border: solid 1px whitesmoke; */
+
+.column {
+    width: 15%;
+    height: 80%;
+    margin: 1rem;
+    /* border: solid 1px whitesmoke; */
 }
-.column img{
+
+.column img {
     width: 60%;
     margin-left: 1.9rem;
     margin-top: 1rem;
 }
-.column img:hover{
+
+.column img:hover {
     cursor: pointer;
 }
